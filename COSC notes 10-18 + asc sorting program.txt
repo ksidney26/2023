@@ -1,0 +1,97 @@
+       /* int[] tgrade = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        tgrade[0] = 0;
+        tgrade[1] = 75;
+        tgrade[2] = 76;
+        tgrade[3] = 77;
+        tgrade[4] = 78;
+        tgrade[5] = 79;
+        tgrade[6] = 80;
+        tgrade[7] = 81;
+        tgrade[8] = 82;
+        tgrade[9] = 83;
+        System.out.println(tgrade[0]);
+       System.out.println(name[15]);
+        int x;
+            for (int x = 0; x<10; x++);
+        System.out.println(tgrade[] + x);
+        */
+        
+
+public class Main
+{
+    
+    public static void main(String[] args) {
+        
+        int[] numb = {65, 82, 71, 35, 82, 91, 33, 76};
+        int maxnumb = 0;
+            for (int i = 0; i<8; i++){
+                if (maxnumb < numb[i]){
+                    maxnumb = numb[i];
+                }
+            }
+            System.out.println(maxnumb);
+            
+            // how to swap these two numbers.
+            
+            int a = 10;
+            int b = 5;
+            
+            // third int needed;
+            
+            int c = a;
+            a=b;
+            b=c;
+            
+            //print out numb[] array in descending order.
+            
+            
+    }
+}
+
+
+
+weird glitch answer
+maximum positive value for a 32-bit signed binary integer in computing.
+
+<<<<Working program>>>> 
+Sorting program in ascending order
+
+
+public class Main 
+{
+    static void Sort(int numb[], int n) {
+        int i, j, temp;
+        boolean swapped;
+        for (i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (j = 0; j < n - i - 1; j++) {
+                if (numb[j] > numb[j + 1]) {
+                    temp = numb[j];
+                    numb[j] = numb[j + 1];
+                    numb[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false)
+                break;
+                }
+            }
+    static void printArray(int numb[], int size)
+    {
+        int i;
+        for (i = 0; i < size; i++)
+            System.out.print(numb[i] + " ");
+        System.out.println();
+    }
+    
+    
+    public static void main(String args[])
+    {
+        int[] numb = {65, 82, 71, 35, 82, 91, 33, 76};
+        int n = numb.length;
+        Sort(numb, n);
+        printArray(numb, n);
+    }
+}

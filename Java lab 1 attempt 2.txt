@@ -1,0 +1,85 @@
+vH6nJn9B
+
+
+
+
+
+/*
+Online Java - IDE, Code Editor, Compiler
+
+Online Java is a quick and easy tool that helps you to build, compile, test your programs online.
+*/
+
+
+import  java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner myscan = new Scanner(System.in);
+        int age, b;
+       
+        System.out.println("What year were you born? ");
+        b = myscan.nextInt();
+        
+        age =(2023 -b);
+        
+        System.out.println("You are " + age + " years old.");
+
+    }
+        
+}
+
+
+import  java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner myscan = new Scanner(System.in);
+        int age, b;
+       
+        System.out.println("What year were you born? " + "\n");
+        b = myscan.nextInt();
+        
+        age =(2023 -b);System.out.println("\n");
+        
+        System.out.println("You are " + age + " years old.");
+        System.out.println("Are you old enough to drive");
+        
+        if (age <16){
+    System.out.println("no");
+        }else{
+    System.out.println("yes");
+        }
+    
+    }
+}
+
+
+import  java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner myscan = new Scanner(System.in);
+        
+        int marks;
+        char grade;
+        
+        System.out.println("What was your grade on the test?");
+        marks = myscan.nextInt();
+        
+        if (marks >=90){
+            grade = 'A';
+        }else if(marks >=80){
+            grade = 'B';
+        }else if(marks >=70){
+            grade = 'C';
+        }else if(marks >=60){
+            grade = 'D';
+        }else{
+            grade = 'F';}
+        System.out.println("You got a " + grade);
+    }   
+}

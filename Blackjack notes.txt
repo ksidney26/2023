@@ -1,0 +1,341 @@
+import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Blackjack {
+    private Deck deck;
+    private List<Card> playerHand;
+    private List<Card> dealerHand;
+
+    public Blackjack() {
+        this.deck = new Deck();
+        this.playerHand = new ArrayList<>();
+        this.dealerHand = new ArrayList<>();
+    }
+
+    // Rest of your methods remain unchanged
+
+    private void deal() {
+        playerHand.clear();
+        dealerHand.clear();
+        
+        Card DLRcard1 = deck.dealCard();
+        Card DLRcard2 = deck.dealCard();
+        dealerHand.add(DLRcard1);
+        dealerHand.add(DLRcard2);
+
+        Card PLRcard1 = deck.dealCard();
+        Card PLRcard2 = deck.dealCard();
+        playerHand.add(PLRcard1);
+        playerHand.add(PLRcard2);
+
+        System.out.println("Your cards are the " + PLRcard1 + " and the " + PLRcard2);
+        System.out.println("The Dealer shows " + DLRcard1 + " and one card faced down");
+        int PLRtotal = calculatePlayerTotal(); // Fixed method call
+        int DLRtotal = calculateDealerTotal(); // Fixed method call
+        System.out.println("Your total: " + PLRtotal);
+        System.out.println("Dealer's total: " + DLRtotal);
+
+        if (PLRtotal == 21) {
+            win();
+        } else if (DLRtotal == 21) {
+            dealerWin();
+        } else {
+            move();
+        }
+    }
+
+    private void hit() {
+        Card newCard = deck.dealCard();
+        playerHand.add(newCard); // Fixed variable name
+        System.out.println("You drew: " + newCard);
+        int PLRtotal = calculatePlayerTotal(); // Fixed method call
+        System.out.println("Your total is: " + PLRtotal);
+        if (PLRtotal > 21) {
+            bust();
+        } else {
+            move();
+        }
+    }
+
+    private void dealerMove() {
+        int DLRtotal = calculateDealerTotal(); // Fixed method call
+        while (DLRtotal < 17) {
+            Card newCard = deck.dealCard();
+            dealerHand.add(newCard);
+            System.out.println("Dealer drew: " + newCard);
+            DLRtotal = calculateDealerTotal(); // Fixed method call
+        }
+        if (DLRtotal > 21) {
+            dealerBust();
+        } else {
+            compareHands();
+        }
+    }
+
+    // Update other method calls accordingly
+
+    public int calculatePlayerTotal() {
+        // Implement this method based on your logic
+    }
+
+    public int calculateDealerTotal() {
+        // Implement this method based on your logic
+    }
+
+    // Other methods remain unchanged
+}
+
+
+
+
+
+
+
+
+
+import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Blackjack {
+    private Deck deck;
+
+    public Blackjack() {
+        this.deck = new Deck();
+	this.playerHand = new ArrayList<>();
+    }
+
+    public void newGame() {
+        System.out.println("***** Blackjack *****");
+        System.out.println("Welcome to Blackjack.java");
+        System.out.print("Would you like to play? (y/n): ");
+        Scanner scanner = new Scanner(System.in);
+        char answer = scanner.nextLine().charAt(0);
+        if (answer == 'y' || answer == 'Y') {
+        deal();
+        }else{
+        endGame();
+        }
+    }
+
+    private void deal() {
+        Card DLRcard1 = deck.dealCard();
+        Card DLRcard2 = deck.dealCard();
+        
+        Card PLRcard1 = deck.dealCard();
+        Card PLRcard2 = deck.dealCard();
+        System.out.println("Your cards are the " + PLRcard1 + " and the " + PLRcard2);
+        Plrcard1.getValue = set.plrHand1();
+        
+        System.out.println("The Dealer shows " + DLRcard1 + " and one card faced down");
+        int PLRtotal = calculateTotal(PLRcard1, PLRcard2);
+        int DLRtotal = calculateTotal(DLRcard1, DLRcard2);
+        System.out.println("Your total: " + PLRtotal);
+        System.out.println("Dealer's total: " + DLRtotal);
+        if (PLRtotal == 21) {
+            win();
+        } else if (DLRtotal == 21) {
+            dlrWin();
+        } else {
+            move();
+        }
+    }
+
+    private void move() {
+        System.out.println("Would you like to hit(H) or stay(s)?");
+        Scanner.next = new Scanner(System.in);
+        Scanner ans = new Scanner.next().charAt(0);
+        if (char1 == 'h' || char1 == 'H') {
+        hit();
+        }else{ if char1 == 's' || char1 == 'S') {
+        stay();
+        }else 
+        move();
+        }
+    }
+    
+    public char dlrBust() {
+        if (DLRtotal > 21) {
+        System.out.print("\nTotal: " + DLRtotal + "\n");
+        System.out.println("\n *** Bust ***");
+        System.out.println("*****You Win!******");
+        return eogAnswer();
+    }
+    
+    public char plrBust() {
+        if (PLRtotal > 21) {
+        return this.rank.ordinal() = plrHand(Card.getValue(11));
+        }else
+        System.out.print("\nTotal: " + PLRtotal + "\n");
+        System.out.println("\n *** Bust ***");
+        System.out.println("I'm sorry");
+        return dlrWin();
+    }
+        
+    public char eogAnswer() {
+        System.out.print("Play again? (y/n) ");
+        char next_move = scan.next().charAt(0);
+        Scanner ans2 = new Scanner(System.in);
+        ans2 = scn.next()/charAt(0);
+        if (char1 = 'Y' || char1 = 'y') {
+            return newGame();
+        }else{ 
+            return endGame();
+        }
+    }
+    
+    public char dlrWin() {
+     	System.out.println("The dealers total is: " + DLRtotal + "  You lose :(");
+     	eogAnswer();
+
+    private void win() {
+        System.out.println("***** Winner ******");
+        eogAnswer();
+    }
+
+    private void bust() {
+        System.out.println("\n *** Bust ***");
+        System.out.println("I'm sorry");
+        dlrWin();
+    }
+
+    private void endGame() {
+        System.out.println("Thank you for playing!");
+    }
+
+    private int calculateTotal(Card card1, Card card2, Card card3, Card card4, Card card5) {
+        return card1.getValue() + card2.getValue() + card3.getValue() + card4.getValue() + card5.getValue();
+    }
+    
+    public Card plrHand() {
+        dealtCards.add(plrHand);
+        return dealtCards;
+    }
+
+    public List<Card> plrHand() {
+        plrHand1.setValue == dealtCards;
+        plrHand2.setValue == dealtCards;
+        plrHand3.setValue == dealtCards;
+        plrHand4.setValue == dealtCards;
+        plrHand5.setValue == dealtCards;
+    }
+
+    static void dlrHand() {
+        DLRcard1.setValue(0);
+        DLRcard2.setValue(0);
+        DLRcard3,setValue(0);
+        DLRcard4.setValue(0);
+        DLRcard5.setValue(0);
+    }
+    private void eogAnswer() {
+        System.out.print("Play again? (y/n) ");
+        Scanner scanner = new Scanner(System.in);
+        char nextMove = scanner.next().charAt(0);
+        if (nextMove == 'Y' || nextMove == 'y') {
+            newGame();
+        } else {
+            endGame();
+        }
+    }
+
+    public static void main(String[] args) {
+        Blackjack game = new Blackjack();
+        game.newGame();
+    }
+}
+
+class Deck {
+        private List<Card> cards;
+        private List<Card> dealtCards;
+
+    public Deck() {
+        this.cards = new ArrayList<>();
+        this.dealtCards = new ArrayList<>();
+        initializeDeck();
+        shuffleDeck();
+    }
+
+    private void initializeDeck() {
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                Card card = new Card(rank, suit);
+                cards.add(card);
+            }
+        }
+    }
+
+    private void shuffleDeck() {
+        Collections.shuffle(cards);
+    }
+
+    public Card dealCard() {
+        if (cards.isEmpty()) {
+            return null;
+        }
+        Card dealtCard = cards.remove(0);
+        dealtCards.add(dealtCard);
+        return dealtCard;
+    }
+
+    public List<Card> getDealtCards() {
+        return dealtCards;
+    }
+
+    public List<Card> getRemainingCards() {
+        return cards;
+    }
+}
+
+class Card {
+    private Rank rank;
+    private Suit suit;
+
+    public Card(Rank rank, Suit suit) {
+        this.rank = rank;
+        this.suit = suit;
+    }
+
+    public int getValue() {
+        int Card.getValue = cardvalue;
+        switch (cardvalue) {
+        case 1: cardvalue == null;break;
+        case 2: cardvalue == Rank.TWO;break;
+        case 3: cardvalue == Rank.THREE;break;
+        case 4: cardvalue == Rank.FOUR;break;
+        case 5: cardvalue == Rank.FIVE;break;
+        case 6: cardvalue == Rank.SIX;break;
+        case 7: cardvalue == Rank.SEVEN;break;
+        case 8: cardvalue == Rank.EIGHT;break;
+        case 9: cardvalue == Rank.NINE;break;
+        case 10: cardvalue == Rank.TEN || Rank.JACK || Rank.QUEEN || Rank.KING ;break;
+        case 11: cardvalue == Rank.ACE;break;
+        default: cardvalue == null;break;
+    }
+        if (cardvalue == 11) {
+        return this.rank.ordinal() + 1; // +1 to handle ACE which has value 1 or 11
+        }else
+        return getValue();
+    }
+
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
+        }
+    }
+
+    enum Suit {
+        CLUBS, DIAMONDS, HEARTS, SPADES
+    }
+
+    enum Rank {
+        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
+    }
+
+
+
+

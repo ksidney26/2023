@@ -1,0 +1,80 @@
+
+public class Main
+{
+    
+    //Question 1. write a method "max" which takes two integers and return the larger of the two integers.
+    
+    public static void Max(int x, int y) {
+        if (x > y) {
+            System.out.println(x);
+        } else {
+            System.out.println(y);
+        }    
+        }
+    
+    // Question 2, write a method "factorial" which takes a positive integer larger than zero and return the factorial
+    //of that number.
+    
+    public static void factorial(int n) {
+        int product = 1;
+        for (int i = 2; i <= n; i++) {
+            product = product * i;
+        System.out.println(product);
+    }
+    }
+    
+    // Question 3, write a method "isEven" which takes an integer as input and return a Boolean true or false.    
+    
+    public static void isEven(int number) {
+        boolean test1 = true;
+        boolean test2 = false;
+        if (number % 2 == 0){
+        System.out.println(test1);
+        }else{
+        System.out.println(test2);
+        }
+    }
+    
+    // Question 4, write a method "printChar" which takes a character and an integer and display on screen (println) 
+    //the character the number of times indicated by the input.
+    
+    public static void printChar(char s, int times) {
+        if (times == 0) {
+            System.out.println("[]");
+        }else{
+        System.out.print("[" + s);
+        for (int o = 2; o <= times; o++) {
+            System.out.print("," + s);
+        }
+        System.out.println("]");
+    }
+}
+
+    //Question 5, write a method "print" which will take a string and display on to screen (no return).
+    
+    public static void print() {
+        System.out.println("No return");
+    }
+    
+    //Question 6, write a method "max" that would take three integers and return the largest value.  
+    
+    public static void max(int p, int q, int i) {
+        if (p > q && p > i){
+            System.out.println(p);
+        }else if(q > p && q > i){
+            System.out.println(q);
+        }else{
+            System.out.println(i);
+        }
+        }
+
+    public static void main(String[] args){
+
+        Max(12, 20);
+        factorial(10);
+        isEven(45);
+        printChar('Q', 8);
+        print();
+        max(12, 15, 20);
+    }
+}

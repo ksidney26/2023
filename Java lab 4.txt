@@ -1,0 +1,27 @@
+//  Lab4b.java
+//  Drivers license eligibility test
+
+import  java.util.Scanner;
+
+public class Main
+{
+//Ask for user input for age to determine Drivers license eligibility.
+
+    public static void main(String[] args) {
+        Scanner myscan = new Scanner(System.in);
+        int age;
+            System.out.println("What is your current age in years? " + "\n");
+        age = myscan.nextInt();
+        
+//Calculate the users age to see if they are eliglble at all and if so would it be for a student license or a standard license.
+
+            System.out.println("\n");
+        if (age >18){
+            System.out.println("Eligible to Apply");
+        }else if(age >=16 && age <=18){
+            System.out.println("Student Licenses Eligible");
+        }else{
+            System.out.println("Not Eligible");
+        }    
+    }
+} 

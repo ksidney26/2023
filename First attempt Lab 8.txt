@@ -1,0 +1,103 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void avg(int e, int f, int g) {
+        int sum = (e+f+g);
+        int average = (sum / 3);
+        System.out.println(average);
+    }
+    
+    public static void Pascal(int n) {
+        for (int space = 1; space <= n; space++) {
+            for (int j = 0; j <= n - space; j++) {
+                System.out.print(" ");
+            }
+            int C = 1;
+            for (int i = 1; i <= space; i++) {
+                System.out.print(C + " ");
+                C = C * (space - i) / i;
+            }
+            System.out.println();
+        }
+    }
+ 
+//Question 1. Write a java program that takes three integers from the user, assign to a, b, c variables and arrange them in ascending order.
+    public static void main(String[] args){
+        int a, b, c;
+        System.out.println("Provide 3 integers and we will sort them in ascending order.");
+        Scanner scn = new Scanner(System.in);
+        
+        /*
+        System.out.println("Question 1.");
+        System.out.println("First number");
+        a =scn.nextInt();
+        System.out.println("Second number");
+        b =scn.nextInt();
+        System.out.println("Third number");
+        c =scn.nextInt();
+            if(a < b && b < c){
+                System.out.println(a + b + c);
+            }else if(a < c && c < b){
+                System.out.println(a + c + b);
+            }else if(b < a && a < c){
+                System.out.println(b + a + c);
+            }else if(b < c && c < a){
+                System.out.println(b + c + a);
+            }else if(c < b && b < a){
+                System.out.println(c + b + a);
+            }else if(c < a && a < b){
+                System.out.println(c + a + b);
+            }else{
+                
+            }*/
+            
+//Question 2. Write a java program that takes an intenger between 1 and 7. Display the appropriate weekday name.            
+        /*
+        System.out.println("Question 2.");
+        System.out.println("Provide a number between 1 and 7.");
+        int weekday, day;
+        scn.nextInt() = weekday;
+        weekday = day;
+        switch(day){
+        case 1:{System.out.println("Monday");}break;
+        case 2:{System.out.println("Tuesday");}break;
+        case 3:{System.out.println("Wednesday");}break;
+        case 4:{System.out.println("Thursday");}break;
+        case 5:{System.out.println("Friday");}break;
+        case 6:{System.out.println("Saturday");}break;
+        case 7:{System.out.println("Sunday");}break;
+        }
+        */
+//Question 3. Write a java prgram that would display the first 20 Fibonacci numbers. First number is 1, and the second number is 1.
+/*
+        System.out.println("Question 3.");
+        System.out.println("Fibonacci Sequence (first 20 numbers).");
+        int[] FIB = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765};
+            for (int x = 0; x>0; int++);
+        System.out.println(int[x]);
+        */
+//Question 4. Write a java program to display the Pascal's triangle up to 10 rows.        
+        System.out.println("Question 4.");
+        int n = 10;
+        Pascal(n);
+     
+//Question 5. Write a java method "avg" to return the average of three integers.
+
+        System.out.println("Question 5.");
+        System.out.println("Provide 3 numbers to get the average");
+        int one, two, three;
+        System.out.println("First number.");
+        one = scn.nextInt();
+        System.out.println("Second number.");
+        two = scn.nextInt();
+        System.out.println("Third number.");
+        three = scn.nextInt();
+        System.out.println("The average of those integers is...");
+        avg(one, two, three);
+        
+//Question 6. Write a java program that takes a character from the user and identify it as a vowel or a consonant. Display error if it is not a chartacter.
+
+        System.out.println("Question 6.");
+
+    }
+}

@@ -1,0 +1,46 @@
+public class Main
+{
+    public static void main(String[] args) {
+    
+    double sec =3456;
+    double min =(sec /60);
+    double hour =(min /60);
+            System.out.println("Java Lab 3" + "\n");
+  
+            System.out.println("Question 1 ");  
+            System.out.println("3,456 seconds is " + min + " minutes");
+        
+            System.out.println(min + " minutes is " + hour + " hours");
+            
+            System.out.println("Question 2 ");  
+            
+            System.out.println("The order of operations in Java is");
+            
+            System.out.println("Unary operators like " + " +, - ");
+            
+            System.out.println("Multiplicative operators like " + " *, /, % ");
+    
+            System.out.println("Additive operators like " + " +, - ");
+            
+            System.out.println("Question 3 ");  
+            
+            System.out.println("if height is 172 cm and weight is 68kg find the bmi: ");
+            double centimeter =172;
+            double inch =(centimeter * .393);
+            double kilogram =68;
+            double lbs = (kilogram *2.2);
+            double bmi = ((lbs /(inch *inch))) *703;
+            System.out.println("BMI is " + (bmi));
+
+            System.out.println("Question 4 ");  
+            
+            System.out.println("find the value of x(y + 2/z)  where x = 4, y = 5.5 and z = .1 "); 
+            
+            double x =4;
+            double y =5.5;
+            double z =.1;
+            double eq4 = (x *(y + (2 /z)));
+            System.out.println("The answer is " + eq4);  
+            
+    }
+}
