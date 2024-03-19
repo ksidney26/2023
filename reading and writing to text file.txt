@@ -1,0 +1,58 @@
+
+// use: https://www.jdoodle.com/online-java-compiler
+
+// read a text file
+
+import java.io.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+        String txt = null;
+        try{
+            BufferedReader bReader = new BufferedReader(new FileReader("/uploads/testfile.txt"));
+            while((txt = bReader.readLine()) != null) {
+                System.out.println(txt);
+            }
+            bReader.close();
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("Unable to read file");
+        }
+        catch(IOException ex){
+            System.out.println("Unable to read IO");
+        }
+
+    }
+}
+
+// write to a text file
+
+import java.io.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+
+        String filename = "/myfiles/writetxt.txt";
+        try{
+            BufferedWriter bWriter = new BufferedWriter(new FileWriter(filename));
+            
+	    bWriter.write("line 1");
+	    bWriter.newLine();
+	    bWriter.write("line 2");		    
+	    bWriter.newLine();
+	    bWriter.write("line 3");
+
+
+            bWriter.close();
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("Unable to read file");
+        }
+        catch(IOException ex){
+            System.out.println("Unable to read IO");
+        }
+
+    }
+}
+
+

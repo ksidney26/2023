@@ -1,0 +1,137 @@
+
+1. Write a java program that takes three integers from user, assign to a, b, c variables, and arrange them in ascending order.
+
+2. Write a java program that takes an integer between 1 and 7. Display the appropriate weekday name.
+
+3. Write a java program that would lisplay the first 20 Fibonacci numbers. First number is 1, and the second number is 1.
+
+4. Write a java program to display the Pascal's triangle upto 10 rows.
+
+5. Write a Java method "avg" to return the average of three integers.
+
+6. Write a Java program takes a character from user and identify it as a vowel or a consonent. Display an error if it is not a character.
+
+ 
+import java.util.Scanner;
+public class Main
+{
+    public static void avg(int e, int f, int g) {
+        int sum = (e+f+g);
+        int average = (sum / 3);
+        System.out.println(average);
+    }
+    
+    public static void Pascal(int pas) {
+        for (int space = 1; space <= pas; space++) {
+            for (int j = 0; j <= pas - space; j++) {
+                System.out.print(" ");
+            }
+            int C = 1;
+            for (int i = 1; i <= space; i++) {
+                System.out.print(C + " ");
+                C = C * (space - i) / i;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void Fib(int F) {
+        int CupA = 0; int CupB = 1; int add = 0;
+            while (add < F) {
+                System.out.print(CupA + " ");
+                int CupC = CupB + CupA;
+                CupA = CupB;
+                CupB = CupC;
+                add = add + 1;
+        }
+    }
+    public static void main(String[] args){
+        
+//Question 1. Write a java program that takes three integers from the user,
+//assign to variables and arrange them in ascending order.
+        System.out.println("Question 1.");
+        Scanner scn = new Scanner(System.in);
+        int p, q, r;
+        System.out.println("This program will take three numbers and sort them in ascending order.");
+        System.out.println("Enter your first number...");
+        p = scn.nextInt();
+        System.out.println("Enter your second number...");
+        q = scn.nextInt();
+        System.out.println("Enter your third number...");
+        r = scn.nextInt();
+            if (p > q) {
+                int s = p; p = q; q = s;
+                }
+            if (q > r) {
+                int s = q; q = r; r = s;
+                }
+            if (p > q) {
+                int s = p; p = q; q = s;
+                }
+        System.out.println("Your numnbers in ascending order are " + p + " " + q + " " + r);
+        System.out.println("\n");
+            
+//Question 2. Write a java program that takes an integer between 1 and 7. Display the appropriate weekday name.            
+        System.out.println("Question 2.");
+        System.out.println("Provide a number between 1 and 7...");
+        int weekday = scn.nextInt();
+        String day;
+        switch (weekday) {
+        case 1: day = "Sunday";break;
+        case 2: day = "Monday";break;
+        case 3: day = "Tuesday";break;
+        case 4: day = "Wednesday";break;
+        case 5: day = "Thursday";break;
+        case 6: day = "Friday";break;
+        case 7: day = "Saturday";break;
+        default: day = "Invalid day";
+        }
+        System.out.println("You chose ");
+        System.out.println(day + "\n");
+        
+//Question 3. Write a java prgram that would display the first 20 Fibonacci numbers. First number is 1, and the second number is 1.
+        System.out.println("Question 3.");
+        System.out.println("Here are the first 20 numbers of the Fibonacci Sequence.");
+        int F = 21;
+        Fib(F);
+        System.out.println("\n");
+        
+//Question 4. Write a java program to display the Pascal's triangle up to 10 rows.
+        System.out.println("Question 4.");
+        System.out.println("Here is Pascal's Triangle up to 10 rows.");
+        int pas = 10;
+        Pascal(pas);
+        System.out.println("\n");
+        
+//Question 5. Write a java method "avg" to return the average of three integers.
+        System.out.println("Question 5.");
+        System.out.println("Provide 3 numbers to get the average.");
+        int one, two, three;
+        System.out.println("First number...");
+        one = scn.nextInt();
+        System.out.println("Second number...");
+        two = scn.nextInt();
+        System.out.println("Third number...");
+        three = scn.nextInt();
+        System.out.println("The average of those integers is:");
+        avg(one, two, three);
+        System.out.println("\n");
+        
+//Question 6. Write a java program that takes a character from the user and identify it as a vowel or a consonant. Display error if it is not a chartacter.
+        System.out.println("Question 6.");
+        Scanner scan = new Scanner(System.in);
+        char char1;
+        System.out.println("Here is a program that will tell you if a character is a vowel or a consonant.");
+        System.out.println("Enter a letter...");
+        char1 = scan.next().charAt(0);
+        System.out.println("The letter you chose is a...");
+            if (char1 =='a'|| char1 =='e'|| char1 =='i' || char1 =='o'|| char1 =='u'){
+        System.out.println("Vowel");
+            }else if (char1 =='b'|| char1 =='c'|| char1 =='d'|| char1 == 'f'|| char1 == 'g'|| char1 == 'h'|| char1 == 'i'|| char1 == 'j'|| char1 == 'k'|| char1 == 'l'|| char1 == 'm'|| char1 == 'n' || char1 == 'p'|| char1 == 'q'|| char1 == 'r'|| char1 == 's'|| char1 == 't'|| char1 == 'v'|| char1 == 'w'|| char1 == 'x'|| char1 == 'y'|| char1 == 'z'){
+        System.out.println("Consonant");
+            }else{
+            System.out.println("Error");
+            }
+            
+    }
+}

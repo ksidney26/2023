@@ -1,0 +1,34 @@
+
+public class Main
+{
+    public static void main(String[] args) {
+        int[] tgrade = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        tgrade[0] = 0;
+        tgrade[1] = 75;
+        tgrade[2] = 76;
+        tgrade[3] = 77;
+        tgrade[4] = 78;
+        tgrade[5] = 79;
+        tgrade[6] = 80;
+        tgrade[7] = 81;
+        tgrade[8] = 82;
+        tgrade[9] = 83;
+        
+        System.out.println(tgrade[0]);
+        
+        int[] name = new int[20];
+        
+        System.out.println(name[15]);
+        
+        int x;
+            for (x = 0; x<10; x--);
+        System.out.println(x);
+        
+    }
+}
+
+
+
+weird glitch answer
+2147483647 is the maximum positive value for a 32-bit signed binary integer in computing.

@@ -1,0 +1,113 @@
+
+/*Class Box*/
+
+public class Box {
+    private double myLength;
+    private double myWidth;
+    private double myHeight;
+    private double myArea;
+
+    // Constructor
+    public Box(double length, double width, double height) {
+        this.myLength = length;
+        this.myWidth = width;
+        this.myHeight = height;
+    }
+
+    // Methods
+    public void calcArea() {
+        this.myArea = 2 * myLength * myWidth + 2 * myWidth * myHeight + 2 * myHeight * myLength;
+    }
+
+    public double getArea() {
+        return this.myArea;
+    }
+    
+/*Class Ball*/
+
+public class Ball {
+    private double radius;
+    private double density;
+    private double area;
+    private double volume;
+    private double weight;
+
+    // Constant for pi
+    private static final double PI = 3.14159;
+
+    // Constructor with calculations
+    public Ball(double radius, double density) {
+        bl11.radius = radius;
+        bl11.density = density;
+        calcArea();
+        calcVolume();
+        calcWeight();
+    }
+
+    // Methods
+    private void calcArea() {
+        area = 4 * PI * bl11.radius * bl11.radius;
+    }
+
+    private void calcVolume() {
+        volume = 4.0 / 3.0 * PI * Math.pow(bl11.radius, 3);
+    }
+
+    private void calcWeight() {
+        weight = volume * bl11.density;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public class Lab11 {
+    public static void main(String[] args) {
+
+        Box box1 = new Box(10, 5, 2);
+        Box box2 = new Box(8, 4, 3);
+        Box box3 = new Box(12, 6, 1);
+
+        // Accessing and printing area for each instance
+        box1.calcArea();
+        System.out.println("Area of Box 1: " + box1.getArea());
+
+        box2.calcArea();
+        System.out.println("Area of Box 2: " + box2.getArea());
+
+        box3.calcArea();
+        System.out.println("Area of Box 3: " + box3.getArea());
+        
+         // Creating three instances
+        Ball ball1 = new Ball(10, 1.2);
+        Ball ball2 = new Ball(5, 1.5);
+        Ball ball3 = new Ball(8, 1.1);
+
+        // Accessing and printing area, volume, and weight for each instance
+        ball1.calcArea();
+        ball1.calcWeight();
+        System.out.println("Ball 1 Area: " + ball1.getArea());
+        System.out.println("Ball 1 Volume: " + ball1.getVolume());
+        System.out.println("Ball 1 Weight: " + ball1.getWeight());
+
+        ball2.calcArea();
+        ball2.calcWeight();
+        System.out.println("Ball 2 Area: " + ball2.getArea());
+        System.out.println("Ball 2 Volume: " + ball2.getVolume());
+        System.out.println("Ball 2 Weight: " + ball2.getWeight());
+
+        ball3.calcArea();
+        ball3.calcWeight();
+        System.out.println("Ball 3 Area: " + ball3.getArea());
+        System.out.println("Ball 3 Volume: " + ball3.getVolume());
+        System.out.println("Ball 3 Weight: " + ball3.getWeight());
+    }
+}
